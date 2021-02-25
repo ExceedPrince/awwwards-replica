@@ -1,0 +1,684 @@
+@font-face {
+  font-family: VPPixel;
+  src: url("./src/VPPixel-Simplified.otf");
+}
+body {
+  background-color: black;
+  color: white;
+  cursor: none;
+  min-width: 600px;
+  overflow: hidden;
+}
+
+.pointer {
+  width: 28px;
+  height: 28px;
+  border: 1px solid white;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.3s;
+  box-sizing: border-box;
+  position: relative;
+
+  
+  .pointer1 {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    transition: opacity 0.3s;
+    border: 1px solid white;
+    border-radius: 0 0 0 0;
+    background-color: hsla(0,0%,100%,.1);
+    transform-origin: 50% 50%;
+    animation: rotateLoop 3s ease-in-out 0s infinite;
+
+    &:active {
+      opacity: 0%;
+    }
+  }
+
+  &:active {
+    transform: scale(1.5);;
+  }
+}
+
+@keyframes rotateLoop {
+  0% {
+      transform: rotate(0deg);
+      border-radius: 0 0 0 0;
+    }
+  33% {
+      transform: rotate(90deg);
+      border-radius: 15px 0 0 0;
+    }
+  66% {
+      transform: rotate(90deg);
+      border-radius: 15px 0 0 0;
+    }
+  100% {
+    transform: rotate(180deg);
+    border-radius: 0 0 0 0;
+  }
+}
+
+
+#steinaLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: intro 4s forwards;
+  height: 25px;
+}
+
+@keyframes intro {
+	0% {opacity: 0%;}
+	25% {opacity: 100%;}
+	60% {opacity: 100%;}
+	100% {opacity: 0%;}
+}
+
+#firstContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0%;
+  animation: fadein_out 8s;
+
+  #gif {
+    img {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  div#coupleWedding {
+      font-family: VPPixel;
+      font-size: 18px;
+      letter-spacing: 4px;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+      padding: 35px 0 30px 0;
+      visibility: hidden;
+      animation: typing 2.5s steps(20, end) forwards;
+      animation-delay: 2s;
+    }
+    
+    #loadingLine {
+      width: 311px;
+      height: 20px;
+      opacity: 100%;
+      animation: fadeout 5s forwards;
+      animation-delay: 5s;
+
+    #line1 {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+      height: 2px;
+      width: 150px;
+      background-color: rgb(61, 61, 61);
+      margin-bottom: 30px;
+
+      #line2 {
+        height: 100%;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+      }
+    }
+
+    #measure {
+      text-align: center;
+      font-family: VPPixel;
+    }
+  }
+}
+
+@keyframes fadein_out {
+  0% {opacity: 0%;}
+  20% {opacity: 100%;}
+  75% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes fadeout {
+  0% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes typing {
+  from {width: 0; visibility: visible;}
+  to {width: 100%; visibility: visible;}
+}
+
+#secondContainer {
+  position: fixed;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 100%;
+  transition: all 1s ease-out;
+  font-family: VPPixel;
+  text-align: center;
+  letter-spacing: 4px;
+  
+  #sound {
+    margin: 0 0 50px;
+    transform: translateY(100%);
+    animation: fadeup_sound 1.5s ease-out forwards;
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 35px;
+      
+    }
+  }
+
+  #question {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    visibility: hidden;
+    animation: typing 1.5s steps(15, end) forwards;
+    p {
+    font-size: 18px;
+    margin: 0 0 50px;
+    }
+  }
+
+  #Btns {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 16px;
+    margin: 10px 0 160px;
+    transform: translateY(100%);
+    animation: fadeup_btns 1s ease-out forwards;
+
+    span#yesBtn, span#noBtn {
+      margin: 8px;
+      padding: 4px 12px;
+      min-height: 31px;
+      justify-content: center;
+      align-items: center;
+      }
+    }
+  
+  #okContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    transform: translateY(100%);
+    text-align: center;
+    
+    span#ok {
+      display: inline-block;
+      position: relative;
+      font-size: 13.3333px;
+      transform: translateY(50%);
+      transition: text-shadow;
+      animation: fadeup_ok 0.5s ease-out forwards;
+
+      &::after {
+        content: 'OK';
+      }
+
+    &:hover {
+      text-shadow: 0 0 50px rgba(255, 255, 255, 0.589), 0 0 30px rgba(255, 255, 255, 0.589), 0 0 20px rgba(255, 255, 255, 0.575), 0 0 10px rgb(255, 255, 255);
+    }
+  }
+  } 
+}
+
+@keyframes fadein {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+@keyframes fadeup_sound {
+  0% {transform: translateY(100%); opacity: 0%;}
+  100% {transform: translateY(0%); opacity: 100%;}
+}
+
+@keyframes fadeup_btns {
+  0% {transform: translateY(100%); opacity: 0%;}
+  100% {transform: translateY(0%); opacity: 100%;}
+}
+
+@keyframes fadeup_ok {
+  0% {transform: translateY(100%); opacity: 0%;}
+  100% {transform: translateY(0%); opacity: 100%;}
+}
+
+.chooseBtn {
+  color: rgb(61, 61, 61);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0);
+  transition: color 0.5s;
+
+  &:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.253);
+    //cursor: none;
+  }
+}
+
+.btnActive {
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.253);
+}
+
+.disappear {
+  opacity: 0;
+}
+
+#secondContainer.soundUp {
+  transform: translate(-50%, -100%);
+  opacity: 0%;
+}
+
+.backImage {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  filter: brightness(0.8);
+  z-index: -1;
+  transform: scale(1.06);
+}
+
+#treeMain {
+  animation: slowTree 6s ease-in-out infinite;
+}
+
+@keyframes slowTree {
+  0%{bottom: 0;}
+  50%{bottom: 20px;}
+  100%{bottom: 0;}
+}
+
+#static {
+  bottom: 35px;
+  animation: midfield 5s ease-in-out infinite;
+}
+
+@keyframes midfield {
+  0%{bottom: 35px;}
+  50%{bottom: 0;}
+  100%{bottom: 35px;}
+}
+
+#gress {
+  bottom: 35px;
+  animation: slowgress 4.5s ease-in-out infinite;
+}
+
+@keyframes slowgress {
+  0%{bottom: 10px;}
+  50%{bottom: 0;}
+  100%{bottom: 10px;}
+}
+
+.pointer.hovered {
+  transform: scale(1.3);
+  
+  .pointer1 {
+    opacity: 0%;
+    transition: 0.3s;
+  }
+}
+
+.pointer.bigger {
+  transform: scale(1.7);
+  transition: 0.3s;
+}
+
+#thirdContainer {
+  animation: fadein 1.5s;
+}
+
+#steinaLogo3 {
+  position: fixed;
+  top: 45px;
+  left: 55px;
+  height: 17px;
+}
+
+#signIn {
+  position: fixed;
+  top: 35px;
+  right: 180px;
+  height: 10px;
+  font-family: VPPixel;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  transition: text-shadow 0.3s;
+
+  &:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.671);
+  }
+}
+
+#navContainer button {
+  font-family: VPPixel;
+  position: fixed;
+  top: 28px;
+  right: 50px;
+  width: fit-content;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0);
+  transition: text-shadow 0.3s;
+  
+  &:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.671);
+  }
+  
+  svg {
+    position: relative;
+    top: 5px;
+    height: 25px;
+    fill: white;
+  }
+}
+
+#asianMark2 {
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+#verticals {
+  font-family: VPPixel;
+  position: fixed;
+  width: 38px;
+  height: 60vh;
+  margin-top: 5vh;
+  top: 60px;
+  left: calc(4.167vw - 19px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  span {
+    background-color: unset;
+    border: unset;
+    box-shadow: unset;
+    border-radius: unset;
+    letter-spacing: 1px;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13.3px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.589);
+    opacity: 50%;
+    transition: opacity 0.3s;
+    min-height: 28px;
+    transform: rotate(-90deg);
+
+    &:hover {
+      text-shadow: 0 0 10px rgb(255, 255, 255);
+      opacity: 100%;
+    }
+  }
+}
+
+#logoNstart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  animation: slideUp1 1.7s;
+}
+
+@keyframes slideUp1 {
+  0% {top: 70%;}
+  100% {top: 50%;}
+}
+
+#steinaLogo2 {
+/*   position: fixed;
+  top: 43%;
+  left: 50%; */
+  transform: translate(-50%);
+  height: 35px;
+}
+
+#start {
+  font-family: VPPixel;
+  width: 287px;
+  transform: translate(-50%, 250%);
+  padding-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 4px;
+  animation: lineBlink 1s infinite ease-in-out;
+  transition: text-shadow 0.3s;
+
+  &:hover {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.671);
+  }
+}
+
+@keyframes lineBlink {
+  0% {border-bottom: solid 3px rgba(255, 255, 255, 1);}
+  50% {border-bottom: solid 3px rgba(255, 255, 255, 0);}
+  100% {border-bottom: solid 3px rgba(255, 255, 255, 1);}
+  
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 6vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+
+  span {
+    font-size: 13px;
+    font-family: arial;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    color: rgb(167, 167, 167);
+
+    &:first-child {
+      font-weight: 700;
+    }
+
+    &:last-child {
+      font-family: VPPixel;
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: rgb(218, 218, 218);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0);
+      transition: text-shadow 0.3s;
+    
+      &:hover {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.671);
+      }
+    }
+  }
+}
+
+#soundBtn {
+  position: fixed;
+  bottom: 100px;
+  left: 6vh;
+
+  img {
+  height: 34px;
+  }
+}
+
+#edges1, #edges2 {
+  width: 79px;
+  height: 24px;
+}
+
+.edges {
+  position: relative;
+  transform: translateY(-100%) scale(1);
+  animation: scaleUp 0.3s forwards;
+
+  #up-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+  
+    .vertical {
+      width: 1px;
+      height: 3px;
+      background-color: white;
+    }
+  
+    .horizontal {
+      width: 3px;
+      height: 1px;
+      background-color: white;
+    }
+  }
+  
+  #up-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 3px;
+  
+    .vertical {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 3px;
+      background-color: white;
+    }
+  
+    .horizontal {
+      width: 3px;
+      height: 1px;
+      background-color: white;
+    }
+  }
+  
+  #down-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 3px;
+    height: 3px;
+  
+    .vertical {
+      position: absolute;
+      right: 0;
+      width: 1px;
+      height: 3px;
+      background-color: white;
+    }
+  
+    .horizontal {
+      position: absolute;
+      bottom: 0;
+      width: 3px;
+      height: 1px;
+      background-color: white;
+    }
+  }
+  
+  #down-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 3px;
+  
+    .vertical {
+      position: absolute;
+      left: 0;
+      width: 1px;
+      height: 3px;
+      background-color: white;
+    }
+  
+    .horizontal {
+      position: absolute;
+      bottom: 0;
+      width: 3px;
+      height: 1px;
+      background-color: white;
+    }
+  }
+}
+
+@keyframes scaleUp {
+  0%{opacity: 0%; transform: translateY(-100%) scale(0.7);}
+  100%{opacity: 100%; transform: translateY(-100%) scale(1);}
+}
+
+#lines {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 1px;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 40px;
+  margin: 0 auto;
+  opacity: 100%;
+}
+
+.whiteLine {
+  position: absolute;
+  background-color: rgb(170, 170, 170);
+}
+
+#line-up {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+}
+
+#line-right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+}
+
+#line-down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+}
+
+#line-left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 25px;
+}
+
